@@ -1,0 +1,33 @@
+type Mutation{
+    createEmployee(employee: EmployeeDTO): Employee
+    updateEmployee(guid: String!, employee: EmployeeDTO): Employee
+    deleteEmployee(guid: String!): Employee
+}
+
+
+type Query {
+    allEmployees(page: Int!):[Employee!]!
+    getEmployee(guid: String): Employee
+}
+
+type Employee {
+    name: String!
+    age: String!
+    address: String!
+    department: String!
+    mobileNumber: String!
+    guid: String!
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+input EmployeeDTO{
+    name: String!
+    age: String!
+    address: String!
+    department: String!
+    mobileNumber: String!
+}

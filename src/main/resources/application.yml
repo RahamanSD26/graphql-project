@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  environment: local
+  application:
+    name: graphql-project
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017/graphql-project
